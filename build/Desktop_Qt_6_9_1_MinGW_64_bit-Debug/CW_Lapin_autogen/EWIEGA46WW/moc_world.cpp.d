@@ -1,9 +1,11 @@
 C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/EWIEGA46WW/moc_world.cpp: C:/CW_Lapin/world.h \
   C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/moc_predefs.h \
+  C:/CW_Lapin/entitytype.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QHash \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QList \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QObject \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QPoint \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/QSet \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q20memory.h \
@@ -71,6 +73,7 @@ C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/EWIEGA46W
   C:/Qt/6.9.1/mingw_64/include/QtCore/qrefcount.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qscopeguard.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/qset.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qstdlibdetection.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qstring.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qstringalgorithms.h \

@@ -5,7 +5,7 @@
 #include <QRandomGenerator>
 
 Plant::Plant(int x, int y)
-    : Entity(EntityType::PLANT, x, y, Qt::green), spreadCooldown(PLANT_SPREAD_COOLDOWN_TURNS) {
+    : Entity(EntityType::PLANT, x, y, PLANT_COLOR), spreadCooldown(PLANT_SPREAD_COOLDOWN_TURNS) {
 }
 
 // ВИПРАВЛЕНО: Сигнатура відповідає базовому класу

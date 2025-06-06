@@ -39,16 +39,19 @@ template <> constexpr inline auto SimulationView::qt_create_metaobjectdata<qt_me
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "SimulationView",
-        "addEntityActionTriggered",
+        "userMadeChange",
         "",
+        "addEntityActionTriggered",
         "removeEntityActionTriggered"
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Signal 'userMadeChange'
+        QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'addEntityActionTriggered'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'removeEntityActionTriggered'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'removeEntityActionTriggered'
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -72,12 +75,16 @@ void SimulationView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
     auto *_t = static_cast<SimulationView *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->addEntityActionTriggered(); break;
-        case 1: _t->removeEntityActionTriggered(); break;
+        case 0: _t->userMadeChange(); break;
+        case 1: _t->addEntityActionTriggered(); break;
+        case 2: _t->removeEntityActionTriggered(); break;
         default: ;
         }
     }
-    (void)_a;
+    if (_c == QMetaObject::IndexOfMethod) {
+        if (QtMocHelpers::indexOfMethod<void (SimulationView::*)()>(_a, &SimulationView::userMadeChange, 0))
+            return;
+    }
 }
 
 const QMetaObject *SimulationView::metaObject() const
@@ -99,15 +106,21 @@ int SimulationView::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
+}
+
+// SIGNAL 0
+void SimulationView::userMadeChange()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 QT_WARNING_POP

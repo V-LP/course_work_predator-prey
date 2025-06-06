@@ -20,6 +20,8 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
     void contextMenuEvent(QContextMenuEvent *event) override;
 
+signals:
+    void userMadeChange();
 
 private slots:
     void addEntityActionTriggered();

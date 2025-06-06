@@ -44,6 +44,7 @@ set(OLD_GLOB
   "C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/EWIEGA46WW/moc_entity.cpp"
   "C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/EWIEGA46WW/moc_mainwindow.cpp"
+  "C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/EWIEGA46WW/moc_setupdialog.cpp"
   "C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/EWIEGA46WW/moc_simulationview.cpp"
   "C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/EWIEGA46WW/moc_world.cpp"
   "C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/mocs_compilation.cpp"
@@ -54,6 +55,7 @@ set(OLD_GLOB
   "C:/CW_Lapin/mainwindow.cpp"
   "C:/CW_Lapin/plant.cpp"
   "C:/CW_Lapin/predator.cpp"
+  "C:/CW_Lapin/setupdialog.cpp"
   "C:/CW_Lapin/simulationview.cpp"
   "C:/CW_Lapin/world.cpp"
   )
@@ -84,6 +86,7 @@ set(OLD_GLOB
   "C:/CW_Lapin/mainwindow.h"
   "C:/CW_Lapin/plant.h"
   "C:/CW_Lapin/predator.h"
+  "C:/CW_Lapin/setupdialog.h"
   "C:/CW_Lapin/simulationview.h"
   "C:/CW_Lapin/world.h"
   )

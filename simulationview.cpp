@@ -100,27 +100,18 @@ void SimulationView::addEntityActionTriggered() {
     int x = lastRightClickScenePos.x();
     int y = lastRightClickScenePos.y();
 
-    if (currentWorld->isValidPosition(x,y) && currentWorld->getEntityAt(x,y) == nullptr) {
-        Entity* newEntity = nullptr;
-        switch (type) {
-        case EntityType::PLANT:     newEntity = new Plant(x, y); break;
-        case EntityType::HERBIVORE: newEntity = new Herbivore(x, y); break;
-        case EntityType::PREDATOR:  newEntity = new Predator(x, y); break;
-        }
-        if (newEntity) {
-            currentWorld->addEntity(newEntity); // World handles adding to scene
-            scene()->update(); // Ensure view updates
-        }
-    }
+    currentWorld->scheduleAddEntity(type, x, y);
+    emit userMadeChange();
 }
 
 void SimulationView::removeEntityActionTriggered() {
     if (!currentWorld) return;
     int x = lastRightClickScenePos.x();
     int y = lastRightClickScenePos.y();
-    Entity* entityToRemove = currentWorld->getEntityAt(x,y);
-    if(entityToRemove){
-        currentWorld->removeEntity(entityToRemove);
-        scene()->update(); // Ensure view updates
+    Entity* entityToRemove = currentWorld->getEntityAt(x, y);
+
+    if (entityToRemove) {
+        currentWorld->scheduleRemoveEntity(entityToRemove);
+        emit userMadeChange();
     }
 }

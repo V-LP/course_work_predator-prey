@@ -2,6 +2,8 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include <QColor>
+
 // Розміри світу та клітинок
 const int GRID_SIZE_N = 30;       // Кількість клітинок по одній осі (поле N x N)
 const int CELL_SIZE_PX = 20;      // Розмір однієї клітинки в пікселях
@@ -10,6 +12,11 @@ const int CELL_SIZE_PX = 20;      // Розмір однієї клітинки 
 const int INITIAL_PLANTS = 60;
 const int INITIAL_HERBIVORES = 20;
 const int INITIAL_PREDATORS = 7;
+
+// Параметри вигляду
+const QColor PLANT_COLOR = Qt::darkGreen;
+const QColor HERBIVORE_COLOR = QColor(0, 100, 255);
+const QColor PREDATOR_COLOR = QColor(220, 20, 60);
 
 // Параметри рослин
 const int PLANT_SPREAD_COOLDOWN_TURNS = 8;  // Кількість ходів до наступної спроби розповсюдження

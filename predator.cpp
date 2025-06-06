@@ -1,13 +1,14 @@
 // predator.cpp
 #include "predator.h"
 #include "world.h"
+#include "plant.h"
 #include "herbivore.h" // Потрібен для логіки руху та поїдання
 #include "config.h"
 #include <QRandomGenerator>
 #include <QtMath> // For qAbs
 
 Predator::Predator(int x, int y)
-    : LivingBeing(EntityType::PREDATOR, x, y, Qt::red, PREDATOR_INITIAL_HUNGER),
+    : LivingBeing(EntityType::PREDATOR, x, y, PREDATOR_COLOR, PREDATOR_INITIAL_HUNGER),
     speed(PREDATOR_SPEED), visionRange(PREDATOR_VISION_RANGE) {
 }
 
@@ -66,14 +67,18 @@ void Predator::move(World& world) {
 
     if (world.isValidPosition(targetX, targetY)) {
         Entity* entityAtTarget = world.getEntityAt(targetX, targetY);
-        if (entityAtTarget == nullptr || dynamic_cast<Herbivore*>(entityAtTarget) || entityAtTarget == this) {
+        // ВИПРАВЛЕННЯ 3: Дозволяємо рух на клітинку з рослиною
+        if (entityAtTarget == nullptr || dynamic_cast<Herbivore*>(entityAtTarget) || dynamic_cast<Plant*>(entityAtTarget) || entityAtTarget == this) {
             setGridPos(targetX, targetY);
         } else {
+            // ... (логіка випадкового руху, якщо шлях заблоковано)
             int randX = gridX + (QRandomGenerator::global()->bounded(3) - 1) * speed;
             int randY = gridY + (QRandomGenerator::global()->bounded(3) - 1) * speed;
             randX = qBound(0, randX, GRID_SIZE_N - 1);
             randY = qBound(0, randY, GRID_SIZE_N - 1);
-            if (world.isValidPosition(randX, randY) && (world.getEntityAt(randX, randY) == nullptr || dynamic_cast<Herbivore*>(world.getEntityAt(randX, randY)) )) {
+            Entity* entityAtRand = world.getEntityAt(randX, randY);
+            // ВИПРАВЛЕННЯ 3: Також дозволяємо випадковий рух на рослину
+            if (world.isValidPosition(randX, randY) && (entityAtRand == nullptr || dynamic_cast<Herbivore*>(entityAtRand) || dynamic_cast<Plant*>(entityAtRand) )) {
                 setGridPos(randX, randY);
             }
         }
@@ -83,9 +88,6 @@ void Predator::move(World& world) {
 void Predator::eat(World& world, QSet<Entity*>& deadEntities) {
     Entity* entityAtPos = world.getEntityAt(gridX, gridY);
     if (auto herbivore = dynamic_cast<Herbivore*>(entityAtPos)) {
-        // ВИПРАВЛЕНО: Видалено 'herbivore != this'
-        // dynamic_cast вже гарантує, що 'herbivore' не є 'this' (Predator),
-        // оскільки Predator не може бути успішно перетворений на Herbivore.
         if (!herbivore->isMarkedForDeath()) {
             increaseHunger(PREDATOR_EAT_HERBIVORE_HUNGER_GAIN);
             foodEaten++;

@@ -8,7 +8,7 @@
 #include <QtMath> // For qAbs
 
 Herbivore::Herbivore(int x, int y)
-    : LivingBeing(EntityType::HERBIVORE, x, y, Qt::blue, HERBIVORE_INITIAL_HUNGER),
+    : LivingBeing(EntityType::HERBIVORE, x, y, HERBIVORE_COLOR, HERBIVORE_INITIAL_HUNGER),
     speed(HERBIVORE_SPEED), visionRange(HERBIVORE_VISION_RANGE) {
 }
 

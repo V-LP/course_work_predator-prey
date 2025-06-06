@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-20dcc8816add7e84c1fd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CW_Lapin",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CW_Lapin::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CW_Lapin-Debug-d070601a26ac938fa28c.json",
+					"name" : "CW_Lapin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CW_Lapin_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CW_Lapin_autogen-Debug-527e23b45dee8041b746.json",
+					"name" : "CW_Lapin_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CW_Lapin_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CW_Lapin_autogen_timestamp_deps-Debug-35ccc64d3c753e24a2cd.json",
+					"name" : "CW_Lapin_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+		"source" : "C:/CW_Lapin"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

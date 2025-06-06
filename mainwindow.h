@@ -3,21 +3,19 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QTimer> // Вже було, добре
-
-// ВИПРАВЛЕНО: Додано необхідні заголовки для QPushButton та QLabel
+#include <QTimer>
 #include <QPushButton>
 #include <QLabel>
+
+// Forward declarations
+class World;
+class SimulationView;
+class QGraphicsScene;
+class SetupDialog;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
-
-class World;
-class SimulationView;
-class QGraphicsScene;
-// class QLabel; // Тепер включено вище
-// class QPushButton; // Тепер включено вище
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -33,26 +31,34 @@ private slots:
 
     void updateSimulation();
     void updateStatisticsDisplay(int turn, int plants, int herbivores, int predators);
+    void onUserInteraction();
 
 private:
-    Ui::MainWindow *ui; // If using .ui file, otherwise manage layouts manually
+    void setupUiManual();
+    void setupNewSimulation(); // Нова функція для налаштування симуляції
+    void clearSimulation(); // Функція для очищення
+
+    Ui::MainWindow *ui;
 
     SimulationView *simView;
     QGraphicsScene *scene;
     World *world;
     QTimer *simulationTimer;
 
-    // UI elements for statistics (if not using .ui file)
+    // Зберігаємо параметри симуляції для скидання
+    int m_gridSize;
+    int m_initialPlants;
+    int m_initialHerbivores;
+    int m_initialPredators;
+
+    // UI elements
     QLabel *turnLabel;
     QLabel *plantsLabel;
     QLabel *herbivoresLabel;
     QLabel *predatorsLabel;
     QPushButton *startButton;
-    QPushButton *pauseButton; // Тепер тип QPushButton відомий
+    QPushButton *pauseButton;
     QPushButton *resetButton;
-
-
-    void setupUiManual(); // Call this if not using .ui file
 };
 
 #endif // MAINWINDOW_H

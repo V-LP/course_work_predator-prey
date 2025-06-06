@@ -36,6 +36,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         predator.h predator.cpp
         world.h world.cpp
         simulationview.h simulationview.cpp
+        setupdialog.h setupdialog.cpp
 
 
 

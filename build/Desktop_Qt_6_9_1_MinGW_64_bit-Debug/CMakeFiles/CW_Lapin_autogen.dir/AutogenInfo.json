@@ -366,6 +366,12 @@
 		[ "C:/CW_Lapin/plant.h", "MU", "EWIEGA46WW/moc_plant.cpp", null ],
 		[ "C:/CW_Lapin/predator.h", "MU", "EWIEGA46WW/moc_predator.cpp", null ],
 		[
+			"C:/CW_Lapin/setupdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_setupdialog.cpp",
+			null
+		],
+		[
 			"C:/CW_Lapin/simulationview.h",
 			"MU",
 			"EWIEGA46WW/moc_simulationview.cpp",
@@ -451,6 +457,7 @@
 		[ "C:/CW_Lapin/mainwindow.cpp", "MU", null ],
 		[ "C:/CW_Lapin/plant.cpp", "MU", null ],
 		[ "C:/CW_Lapin/predator.cpp", "MU", null ],
+		[ "C:/CW_Lapin/setupdialog.cpp", "MU", null ],
 		[ "C:/CW_Lapin/simulationview.cpp", "MU", null ],
 		[ "C:/CW_Lapin/world.cpp", "MU", null ]
 	],
