@@ -350,6 +350,12 @@
 			"EWIEGA46WW/moc_entitytype.cpp",
 			null
 		],
+		[
+			"C:/CW_Lapin/graphwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_graphwidget.cpp",
+			null
+		],
 		[ "C:/CW_Lapin/herbivore.h", "MU", "EWIEGA46WW/moc_herbivore.cpp", null ],
 		[
 			"C:/CW_Lapin/livingbeing.h",
@@ -451,6 +457,7 @@
 	"SOURCES" : 
 	[
 		[ "C:/CW_Lapin/entity.cpp", "MU", null ],
+		[ "C:/CW_Lapin/graphwidget.cpp", "MU", null ],
 		[ "C:/CW_Lapin/herbivore.cpp", "MU", null ],
 		[ "C:/CW_Lapin/livingbeing.cpp", "MU", null ],
 		[ "C:/CW_Lapin/main.cpp", "MU", null ],

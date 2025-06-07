@@ -37,6 +37,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         world.h world.cpp
         simulationview.h simulationview.cpp
         setupdialog.h setupdialog.cpp
+        graphwidget.h graphwidget.cpp
+
 
 
 

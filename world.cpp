@@ -4,13 +4,11 @@
 #include "plant.h"
 #include "herbivore.h"
 #include "predator.h"
-#include "config.h"
 #include <QGraphicsScene>
 #include <QRandomGenerator>
 #include <QMutableListIterator>
-#include <QtMath> // For qAbs
+#include <QtMath>
 
-// Helper для QHash<QPoint, Entity*>
 inline uint qHash(const QPoint &key, uint seed = 0) {
     return qHash(QPair<int, int>(key.x(), key.y()), seed);
 }
@@ -21,22 +19,17 @@ World::World(int size, QGraphicsScene* scene, QObject *parent)
 }
 
 World::~World() {
-    // Елементи будуть видалені через qDeleteAll, сцена не повинна ними володіти
     qDeleteAll(allEntities);
     allEntities.clear();
 }
 
 void World::initializePopulation(int numPlants, int numHerbivores, int numPredators) {
-    // ВИПРАВЛЕННЯ 1: Правильне очищення перед перезапуском
-    // Замість graphicsScene->clear(), що призводило до подвійного видалення,
-    // ми тепер вручну видаляємо об'єкти, а сцена просто забуває про них.
     qDeleteAll(allEntities);
     allEntities.clear();
     entityGridCache.clear();
     scheduledAdditions.clear();
     scheduledForRemoval.clear();
     if(graphicsScene) {
-        // Очищаємо сцену від вказівників, не видаляючи об'єкти (їх ми вже видалили)
         graphicsScene->clear();
     }
     currentTurn = 0;
@@ -70,12 +63,10 @@ void World::tick() {
     QList<Entity*> newEntitiesThisTurn;
     QSet<Entity*> deadEntitiesThisTurn;
 
-    // Обробка запланованих дій (додавання/видалення з UI)
     processScheduledActions(deadEntitiesThisTurn, newEntitiesThisTurn);
 
     updateEntityGridCache();
 
-    // ... (логіка тіку для хижаків, травоїдних, рослин) ...
     QList<Predator*> predators_list;
     QList<Herbivore*> herbivores_list;
     QList<Plant*> plants_list;

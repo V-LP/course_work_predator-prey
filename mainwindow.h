@@ -6,12 +6,14 @@
 #include <QTimer>
 #include <QPushButton>
 #include <QLabel>
+#include <QList>
+#include <QVector>
 
-// Forward declarations
 class World;
 class SimulationView;
 class QGraphicsScene;
 class SetupDialog;
+class GraphWidget;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,6 +30,8 @@ private slots:
     void on_startButton_clicked();
     void on_pauseButton_clicked();
     void on_resetButton_clicked();
+    void on_saveButton_clicked();
+    void on_loadButton_clicked(); // Новий слот
 
     void updateSimulation();
     void updateStatisticsDisplay(int turn, int plants, int herbivores, int predators);
@@ -35,23 +39,20 @@ private slots:
 
 private:
     void setupUiManual();
-    void setupNewSimulation(); // Нова функція для налаштування симуляції
-    void clearSimulation(); // Функція для очищення
+    void setupNewSimulation();
+    void clearSimulation();
 
     Ui::MainWindow *ui;
-
     SimulationView *simView;
     QGraphicsScene *scene;
     World *world;
     QTimer *simulationTimer;
 
-    // Зберігаємо параметри симуляції для скидання
     int m_gridSize;
     int m_initialPlants;
     int m_initialHerbivores;
     int m_initialPredators;
 
-    // UI elements
     QLabel *turnLabel;
     QLabel *plantsLabel;
     QLabel *herbivoresLabel;
@@ -59,6 +60,11 @@ private:
     QPushButton *startButton;
     QPushButton *pauseButton;
     QPushButton *resetButton;
+    QPushButton *saveButton;
+    QPushButton *loadButton; // Нова кнопка
+
+    GraphWidget *graphWidget;
+    QList<QVector<int>> m_statsHistory;
 };
 
 #endif // MAINWINDOW_H

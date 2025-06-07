@@ -2,13 +2,12 @@
 #ifndef LIVINGBEING_H
 #define LIVINGBEING_H
 
-#include "entity.h" // entity.h вже включає QList та QSet
+#include "entity.h"
 
 class LivingBeing : public Entity {
 public:
     LivingBeing(EntityType type, int x, int y, QColor color, int initialHunger);
 
-    // ВИПРАВЛЕНО: Змінено тип deadEntities
     virtual void tick(World& world, QList<Entity*>& newEntities, QSet<Entity*>& deadEntities) override = 0;
 
     int getHunger() const;

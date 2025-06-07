@@ -9,6 +9,8 @@ CW_Lapin_autogen/timestamp: \
 	C:/CW_Lapin/entity.cpp \
 	C:/CW_Lapin/entity.h \
 	C:/CW_Lapin/entitytype.h \
+	C:/CW_Lapin/graphwidget.cpp \
+	C:/CW_Lapin/graphwidget.h \
 	C:/CW_Lapin/herbivore.cpp \
 	C:/CW_Lapin/herbivore.h \
 	C:/CW_Lapin/livingbeing.cpp \
@@ -30,8 +32,10 @@ CW_Lapin_autogen/timestamp: \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/QList \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/QObject \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/QPoint \
+	C:/Qt/6.9.1/mingw_64/include/QtCore/QPointF \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/QSet \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/QTimer \
+	C:/Qt/6.9.1/mingw_64/include/QtCore/QVector \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/q20iterator.h \
@@ -162,9 +166,11 @@ CW_Lapin_autogen/timestamp: \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/qutf8stringview.h \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/qvarlengtharray.h \
+	C:/Qt/6.9.1/mingw_64/include/QtCore/qvector.h \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/qversiontagging.h \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/qxptype_traits.h \
 	C:/Qt/6.9.1/mingw_64/include/QtCore/qyieldcpu.h \
+	C:/Qt/6.9.1/mingw_64/include/QtGui/QColor \
 	C:/Qt/6.9.1/mingw_64/include/QtGui/qaction.h \
 	C:/Qt/6.9.1/mingw_64/include/QtGui/qbitmap.h \
 	C:/Qt/6.9.1/mingw_64/include/QtGui/qbrush.h \
@@ -203,6 +209,7 @@ CW_Lapin_autogen/timestamp: \
 	C:/Qt/6.9.1/mingw_64/include/QtWidgets/QLabel \
 	C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow \
 	C:/Qt/6.9.1/mingw_64/include/QtWidgets/QPushButton \
+	C:/Qt/6.9.1/mingw_64/include/QtWidgets/QWidget \
 	C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractbutton.h \
 	C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 	C:/Qt/6.9.1/mingw_64/include/QtWidgets/qdialog.h \

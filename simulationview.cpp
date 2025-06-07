@@ -2,10 +2,7 @@
 #include "simulationview.h"
 #include "world.h"
 #include "config.h"
-#include "entity.h" // For EntityType and dynamic_cast
-#include "plant.h"
-#include "herbivore.h"
-#include "predator.h"
+#include "entity.h"
 #include <QPainter>
 #include <QMouseEvent>
 #include <QContextMenuEvent>

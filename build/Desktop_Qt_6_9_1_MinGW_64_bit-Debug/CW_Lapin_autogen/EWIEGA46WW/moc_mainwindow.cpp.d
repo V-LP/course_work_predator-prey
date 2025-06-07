@@ -1,6 +1,8 @@
 C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/CW_Lapin/mainwindow.h \
   C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/moc_predefs.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/QList \
   C:/Qt/6.9.1/mingw_64/include/QtCore/QTimer \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/QVector \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q20iterator.h \
@@ -131,6 +133,7 @@ C:/CW_Lapin/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CW_Lapin_autogen/EWIEGA46W
   C:/Qt/6.9.1/mingw_64/include/QtCore/qutf8stringview.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qvariant.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qvarlengtharray.h \
+  C:/Qt/6.9.1/mingw_64/include/QtCore/qvector.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/qyieldcpu.h \

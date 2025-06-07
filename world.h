@@ -7,7 +7,7 @@
 #include <QPoint>
 #include <QHash>
 #include <QSet>
-#include <utility> // for std::pair
+#include <utility>
 #include "entitytype.h"
 
 class Entity;
@@ -19,7 +19,6 @@ public:
     explicit World(int size, QGraphicsScene* scene, QObject *parent = nullptr);
     ~World();
 
-    // Змінена функція для ініціалізації з параметрами
     void initializePopulation(int numPlants, int numHerbivores, int numPredators);
     void tick();
 

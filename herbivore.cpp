@@ -2,29 +2,29 @@
 #include "herbivore.h"
 #include "world.h"
 #include "plant.h"
-#include "predator.h" // Потрібен для логіки руху
+#include "predator.h"
 #include "config.h"
 #include <QRandomGenerator>
-#include <QtMath> // For qAbs
+#include <QtMath>
 
 Herbivore::Herbivore(int x, int y)
     : LivingBeing(EntityType::HERBIVORE, x, y, HERBIVORE_COLOR, HERBIVORE_INITIAL_HUNGER),
     speed(HERBIVORE_SPEED), visionRange(HERBIVORE_VISION_RANGE) {
 }
 
-// ВИПРАВЛЕНО: Сигнатура і використання deadEntities.insert
+
 void Herbivore::tick(World& world, QList<Entity*>& newEntities, QSet<Entity*>& deadEntities) {
     if (isMarkedForDeath()) return;
 
     decreaseHunger(HUNGER_DECREASE_PER_TURN);
     if (isStarving()) {
-        deadEntities.insert(this); // ВИПРАВЛЕНО: insert замість append
+        deadEntities.insert(this);
         markForDeath();
         return;
     }
 
     move(world);
-    eat(world, deadEntities); // Тепер передає QSet
+    eat(world, deadEntities);
     if (isMarkedForDeath()) return;
 
     tryReproduce(world, newEntities);
@@ -94,14 +94,13 @@ void Herbivore::move(World& world) {
     }
 }
 
-// ВИПРАВЛЕНО: Сигнатура і використання deadEntities.insert
 void Herbivore::eat(World& world, QSet<Entity*>& deadEntities) {
     Entity* entityAtPos = world.getEntityAt(gridX, gridY);
     if (auto plant = dynamic_cast<Plant*>(entityAtPos)) {
         if (!plant->isMarkedForDeath()) {
             increaseHunger(HERBIVORE_EAT_PLANT_HUNGER_GAIN);
             foodEaten++;
-            deadEntities.insert(plant); // ВИПРАВЛЕНО: insert
+            deadEntities.insert(plant);
             plant->markForDeath();
             world.removeEntityFromCellCache(plant->getGridX(), plant->getGridY());
         }

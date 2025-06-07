@@ -2,7 +2,7 @@
 #include "predator.h"
 #include "world.h"
 #include "plant.h"
-#include "herbivore.h" // Потрібен для логіки руху та поїдання
+#include "herbivore.h"
 #include "config.h"
 #include <QRandomGenerator>
 #include <QtMath> // For qAbs
@@ -67,17 +67,14 @@ void Predator::move(World& world) {
 
     if (world.isValidPosition(targetX, targetY)) {
         Entity* entityAtTarget = world.getEntityAt(targetX, targetY);
-        // ВИПРАВЛЕННЯ 3: Дозволяємо рух на клітинку з рослиною
         if (entityAtTarget == nullptr || dynamic_cast<Herbivore*>(entityAtTarget) || dynamic_cast<Plant*>(entityAtTarget) || entityAtTarget == this) {
             setGridPos(targetX, targetY);
         } else {
-            // ... (логіка випадкового руху, якщо шлях заблоковано)
             int randX = gridX + (QRandomGenerator::global()->bounded(3) - 1) * speed;
             int randY = gridY + (QRandomGenerator::global()->bounded(3) - 1) * speed;
             randX = qBound(0, randX, GRID_SIZE_N - 1);
             randY = qBound(0, randY, GRID_SIZE_N - 1);
             Entity* entityAtRand = world.getEntityAt(randX, randY);
-            // ВИПРАВЛЕННЯ 3: Також дозволяємо випадковий рух на рослину
             if (world.isValidPosition(randX, randY) && (entityAtRand == nullptr || dynamic_cast<Herbivore*>(entityAtRand) || dynamic_cast<Plant*>(entityAtRand) )) {
                 setGridPos(randX, randY);
             }

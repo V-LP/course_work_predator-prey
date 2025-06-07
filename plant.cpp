@@ -8,7 +8,6 @@ Plant::Plant(int x, int y)
     : Entity(EntityType::PLANT, x, y, PLANT_COLOR), spreadCooldown(PLANT_SPREAD_COOLDOWN_TURNS) {
 }
 
-// ВИПРАВЛЕНО: Сигнатура відповідає базовому класу
 void Plant::tick(World& world, QList<Entity*>& newEntities, [[maybe_unused]] QSet<Entity*>& deadEntities) {
     if (isMarkedForDeath()) return;
 

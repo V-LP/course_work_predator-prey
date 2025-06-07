@@ -1,13 +1,13 @@
 // entity.cpp
 #include "entity.h"
 #include "config.h"
-#include <QBrush> // Додано для QBrush
+#include <QBrush>
 
 Entity::Entity(EntityType type, int x, int y, QColor color, QGraphicsItem *parent)
     : QGraphicsRectItem(0, 0, CELL_SIZE_PX, CELL_SIZE_PX, parent),
     entityType(type), gridX(x), gridY(y), markedForDeath(false) {
     setPos(gridX * CELL_SIZE_PX, gridY * CELL_SIZE_PX);
-    setBrush(QBrush(color)); // ВИПРАВЛЕНО: Явне створення QBrush з QColor
+    setBrush(QBrush(color));
 }
 
 EntityType Entity::getEntityType() const {

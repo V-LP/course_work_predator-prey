@@ -5,8 +5,8 @@
 #include <QObject>
 #include <QGraphicsRectItem>
 #include "entitytype.h"
-#include <QList> // для newEntities
-#include <QSet>  // ВИПРАВЛЕНО: для deadEntities
+#include <QList>
+#include <QSet>
 
 class World; // Forward declaration
 
@@ -16,7 +16,6 @@ public:
     Entity(EntityType type, int x, int y, QColor color, QGraphicsItem *parent = nullptr);
     virtual ~Entity() = default;
 
-    // ВИПРАВЛЕНО: Змінено тип deadEntities на QSet<Entity*>&
     virtual void tick(World& world, QList<Entity*>& newEntities, QSet<Entity*>& deadEntities) = 0;
 
     EntityType getEntityType() const;
