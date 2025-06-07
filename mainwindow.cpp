@@ -120,7 +120,6 @@ void MainWindow::setupNewSimulation() {
     clearSimulation();
     SetupDialog dialog(this);
     if (dialog.exec() == QDialog::Accepted) {
-        // ... (код ідентичний попередній версії)
         m_gridSize = dialog.getGridSize();
         m_initialPlants = dialog.getInitialPlants();
         m_initialHerbivores = dialog.getInitialHerbivores();

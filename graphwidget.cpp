@@ -7,9 +7,7 @@ GraphWidget::GraphWidget(QWidget *parent)
     : QWidget(parent), maxTurn(10), maxPopulation(10)
 {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setMinimumHeight(150);
-    // ВИДАЛЕНО: setBackgroundRole(QPalette::Base);
-    // ВИДАЛЕНО: setAutoFillBackground(true);
+    setMinimumHeight(150);;
 }
 
 void GraphWidget::addDataPoint(int turn, int plants, int herbivores, int predators)
@@ -57,7 +55,6 @@ void GraphWidget::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
 
-    // ВИПРАВЛЕНО: Явно замальовуємо фон білим кольором
     painter.fillRect(rect(), Qt::white);
 
     const int PADDING_LEFT = 50;
